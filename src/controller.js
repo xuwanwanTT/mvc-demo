@@ -1,19 +1,19 @@
 import $ from 'jquery'
-import {module1,module2,module3} from './model'
 
-function Maker(options){
-  let controller = {}
-  controller.$element = $(options.element)
-  controller.events = options.events
-
-  for(let key in controller.events){
-    let parts = key.split(' ')
-    let eventType = parts.shift()
-    let selector = parts.join(' ')
-    controller.$element.on(eventType,selector,controller.events[key])
+class Controller{
+  constructor(options){
+    this.$element = $(options.element)
+    this.events = options.events
+    this.bindEvents()
+  }
+  bindEvents(){
+    for(let key in this.events){
+      let parts = key.split(' ')
+      let eventType = parts.shift()
+      let selector = parts.join(' ')
+      this.$element.on(eventType,selector,this.events[key])
+    }
   }
 }
 
-Maker(module1)
-Maker(module2)
-Maker(module3)
+export default Controller
