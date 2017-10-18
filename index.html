@@ -9,15 +9,18 @@
 <body>
   <div class="view">
     <div class="module1">
-      <input type="text"><button>click1</button>
     </div>
     <div class="module2">
-      <input type="text"><button>click2</button>
     </div>
     <div class="module3">
       <input type="text"><button>click3</button>
     </div>
   </div>
+  <script id="module2Template" type="text/x-handlerbars">
+    <span>{{number}}</span>
+    <button name="increase">+</buttom>
+    <button name="decrease">-</buttom>
+  </script>
   <script src="/bundle.js"></script>
 </body>
 </html>

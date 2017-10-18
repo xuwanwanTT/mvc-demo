@@ -7,6 +7,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   devtool: 'source-map',
+  resolve: {
+    alias: {
+       handlebars: 'handlebars/dist/handlebars.min.js'
+    }
+  },
   module: {
     loaders: [
       {
